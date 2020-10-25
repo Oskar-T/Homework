@@ -8,6 +8,7 @@ public class NestedLoops extends Main {
             for (int i = q; i < 5+q; i++) {
                 System.out.print(i + " ");
             }
+            System.out.println("");
 
         }
     }
