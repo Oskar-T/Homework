@@ -12,8 +12,8 @@ public class Main {
         }
     }
 
-    static void hw2() {
-        int[] a = {1,2,3,4,5};
+    static void hw3125() {
+        int[] a = {1,2,3,4,3};
         int[] b = {1,2,3,4,5};
         boolean isEquals = true;
         for(int n = 0; n < a.length; n++) {
@@ -22,6 +22,19 @@ public class Main {
             }
         }
         System.out.println(isEquals);
+
+    }
+
+    static void hw3(int nums[]) {
+
+        for(int k = 0; k < 3; k++) {
+            for(int l = 0; l < 3; l++) {
+                if(k != l) {
+                    System.out.println(10 * nums[k] + nums[l]);
+                }
+            }
+        }
+
 
     }
 
@@ -37,8 +50,8 @@ public class Main {
 
     static void hw4_2() {
 
-        for(int i = 6; i >= 0; i--) {
-            for(int j = i; j < 6;j++) {
+        for(int i = 5; i >= 0; i--) {
+            for(int j = i; j < 6; j++) {
                 System.out.print("*");
             }
             for(int q = i; q > 0; q--){
@@ -49,7 +62,7 @@ public class Main {
 
     }
 
-    static boolean unique (int[] numbers) {
+    static boolean hw5 (int[] numbers) {
         int counter = 0;
         for(int i = 0; i < numbers.length-1; i++) {
             if(numbers[i] != numbers[i+1]) {
@@ -61,15 +74,50 @@ public class Main {
 
     static int[] hw6(int a[], int b[]) {
 
+        int[] sym_diff = new int[a.length+b.length];
 
-        return null;
+        int counter = 0;
+        int unique_numbers = 0;
+        for(int i = 0; i < a.length; i++) {
+            for(int j = 0; j < a.length; j++) {
+                if(a[i] != b[j]) {
+                    counter++;
+                }
+            }
+            if (counter == a.length) {
+                sym_diff[unique_numbers] = a[i];
+                unique_numbers++;
+            }
+
+            counter = 0;
+        }
+
+        for(int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b.length; j++) {
+                if (b[i] != a[i]) {
+                    counter++;
+                }
+            }
+            if (counter == b.length) {
+                sym_diff[unique_numbers] = b[i];
+                unique_numbers++;
+            }
+
+            counter = 0;
+        }
+
+        return sym_diff;
     }
 
 
     public static void main(String[] args) {
 
-        int[] ar = {1,2,3,4,5,5};
-        System.out.println(unique(ar));
-        System.out.println();
+       int[] a ={2, 5, 3};
+       int[] b = {1, 5, 6};
+       int[] sym_diff = hw6(a, b);
+
+       for(int q : sym_diff) {
+           System.out.println(q);
+       }
     }
 }
