@@ -119,5 +119,6 @@ public class Main {
        for(int q : sym_diff) {
            System.out.println(q);
        }
+        System.out.println(Homeworks.hw(1, 2));
     }
 }
