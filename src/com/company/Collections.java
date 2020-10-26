@@ -89,7 +89,7 @@ public class Collections extends Main {
            System.out.println("Exception" + e);
        }
 
-       if(counter != 0) {
+       if(!list.isEmpty()) {
            mean = sum/counter;
            while (list.hasNext()) {
                int list_number = list.getNext();
