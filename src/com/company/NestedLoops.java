@@ -63,17 +63,19 @@ public class NestedLoops extends Main {
 
     }
 
+
     static boolean hw5 (int[] numbers) {
-        int counter = 0;
-        for(int i = 0; i < numbers.length-1; i++) {
-            if(numbers[i] != numbers[i+1]) {
-                counter++;
+        for(int i = 0; i < numbers.length-1; i++){
+            for(int j = i; j < numbers.length-1; j++) {
+                if(numbers[i] == numbers[j+1]) {
+                    return false;
+                }
             }
         }
-        return counter == numbers.length-1;
+     return true;
     }
 
-    static int[] hw6(int a[], int b[]) {
+    static int[] hw6(int[] a, int[] b) {
 
         int[] sym_diff = new int[a.length+b.length];
 
