@@ -8,9 +8,9 @@ public class Collections extends Main {
 
     static void example_1() {
 
-        int largest = 0;
-        IBCollection<Integer> values = new IBCollection<Integer>();
-        values.add(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+        double largest = 0.0;
+        IBCollection<Double> values = new IBCollection<Double>();
+        values.add(new Double[]{1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0});
         while (values.hasNext()) {
             if(largest < values.getNext()) {
                 largest = values.getNext();
@@ -20,7 +20,7 @@ public class Collections extends Main {
         values.resetNext();
 
         while (values.hasNext()) {
-            if(largest / 2 > values.getNext()) {
+            if(largest / 2.0 > values.getNext()) {
                 System.out.println(values.getNext());
             }
         }
