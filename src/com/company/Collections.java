@@ -18,7 +18,7 @@ public class Collections extends Main {
         }
 
         values.resetNext();
-        
+
         while (values.hasNext()) {
             if(largest * 2/ 2 * 2 > values.getNext()) {
                 System.out.println(values.getNext());
