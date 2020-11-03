@@ -1,6 +1,7 @@
 package com.company;
 
 import ibadts.*;
+import java.math.*;
 
 
 
@@ -123,11 +124,67 @@ public class Array_Algorithms extends Main{
 
     }
 
-    static void hw4() {
+    static int sequentialSearchStr(String []arr, String key) {
 
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i].equals(key)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
+    static int binarySearchStr(String[] arr, String key) {
+
+        int first = 0;
+        int last = arr.length-1;
+        int middle = (first+last)/2;
+
+        while (first <= last) {
+
+            if (key.compareTo(arr[middle]) > 0) {
+                first = middle+1;
+            }  else if (key.compareTo(arr[middle]) < 0) {
+                last = middle - 1;
+            }  else if(arr[middle].equals(key)){
+                break;
+            }
+
+            middle = (first + last) / 2;
+        }
+        return middle;
 
     }
 
+    static void hw4() {
+
+        String addr =
+                "http://www-personal.umich.edu/~jlawler/wordlist";
+        String[] words = ReadViaURL.readWords(addr);
+        System.out.println(sequentialSearchStr(words, "able"));
+
+        System.out.println(binarySearchStr(words, "able"));
+
+    }
+
+    static void hw5(int[] arr) {
+
+        int n = arr.length;
+        int i = 1;
+        int val;
+        while (i < n) {
+
+            val = arr[i];
+            int j = i-1;
+            while (j>=0 && arr[j] > val) {
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = val;
+            i++;
+        }
+
+    }
+    
 
 }
