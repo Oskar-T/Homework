@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class Array_Algorithms extends Main {
 
     static int sequential_search(int []arr, int key) {
@@ -42,6 +45,7 @@ public class Array_Algorithms extends Main {
 
         int swap;
 
+
         for(int i = 0; i < arr.length-1; i++) {
             int index = i;
             for(int j = i+1; j < arr.length; j++) {
@@ -56,8 +60,10 @@ public class Array_Algorithms extends Main {
             for(int k: arr) {
                 System.out.println(k);
             }
+
             System.out.println("");
         }
+        System.out.println(Runtime.version());
 
     }
 
@@ -156,7 +162,6 @@ public class Array_Algorithms extends Main {
         String[] words = ReadViaURL.readWords(addr);
         System.out.println(sequentialSearchStr(words, "able"));
         System.out.println(binarySearchStr(words, "able"));
-
     }
 
     static void hw5(int[] arr) {
@@ -179,5 +184,58 @@ public class Array_Algorithms extends Main {
 
     }
 
+    static void hw6() {
+        System.out.println("Homework 6 is one the handout");
 
+    }
+
+    public static void swap(int index1, int index2, String[] arr) {
+        String swap;
+        swap = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = swap;
+
+    }
+
+    public static void selection_sort_str(String[] arr, int bound) {
+
+        int index;
+        for(int i = 0; i < bound-1; i++) {
+            index = i;
+            for(int j = i + 1; j < bound; j++) {
+                if(arr[j].compareTo(arr[index]) < 0) {
+                    index = j;
+                }
+            }
+            swap(i, index, arr);
+        }
+
+    }
+
+    static void hw7(int n) {
+
+
+        String addr = "http://www-personal.umich.edu/~jlawler/wordlist";
+        String[] words = ReadViaURL.readWords(addr);
+
+        Random rand = new Random();
+
+        for (int i = 0; i < n; i++) {
+            int a = rand.nextInt(n);
+            swap(a, i, words);
+        }
+
+        selection_sort_str(words, n);
+
+    }
+        // data for drawing a graph
+        static void for_graph(int n) {
+            for (int i = n; i < n * 100; i += 100) {
+                long start = System.nanoTime();
+                Array_Algorithms.hw7(n);
+                long timeWent = System.nanoTime() - start;
+                System.out.println(n + " " + timeWent);
+            }
+        }
 }
+

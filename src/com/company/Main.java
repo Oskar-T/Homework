@@ -1,16 +1,14 @@
 package com.company;
 
-
+import java.util.Random;
+import java.util.stream.IntStream;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int [] arr = {7, 9, 2, 11};
-        Array_Algorithms.selection_sort(arr);
-        for (int k : arr) {
-            System.out.println(k);
-        }
+      Array_Algorithms.for_graph(100);
+
 
 
     }
