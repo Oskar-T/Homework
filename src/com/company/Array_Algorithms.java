@@ -1,18 +1,13 @@
 package com.company;
 
-import ibadts.*;
-import java.math.*;
-
-
-
-public class Array_Algorithms extends Main{
+public class Array_Algorithms extends Main {
 
     static int sequential_search(int []arr, int key) {
 
         for(int i = 0; i < arr.length; i++) {
             System.out.println("key found: " + (arr[i] == key));
             if(arr[i] == key) {
-                return key;
+                return i;
             }
         }
         return -1;
@@ -25,7 +20,7 @@ public class Array_Algorithms extends Main{
         int middle = (first+last)/2;
 
         while (first <= last) {
-
+            middle = (first + last) / 2;
             if (key > arr[middle]) {
                 System.out.println("key found: " + (arr[middle] == key));
                 first = middle+1;
@@ -36,8 +31,8 @@ public class Array_Algorithms extends Main{
                 System.out.println("key found: " + (arr[middle] == key));
                 break;
             }
+            System.out.println(middle);
 
-            middle = (first + last) / 2;
         }
         return middle;
 
@@ -45,38 +40,37 @@ public class Array_Algorithms extends Main{
 
     static void selection_sort(int []arr) {
 
-
         int swap;
+
         for(int i = 0; i < arr.length-1; i++) {
             int index = i;
             for(int j = i+1; j < arr.length; j++) {
                 if(arr[index] > arr[j]) {
-                  index = j;
+                    index = j;
                 }
             }
             swap = arr[index];
             arr[index] = arr[i];
             arr[i] = swap;
 
-            for(int k : arr) {
+            for(int k: arr) {
                 System.out.println(k);
             }
             System.out.println("");
         }
 
-
-
     }
 
     static void bubble_sort(int []arr) {
 
+
         int swap;
-        for(int i = 0; i < arr.length-1; i++) {
-            for(int j = 0; j < arr.length-i-1; j++) {
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = i; j < arr.length-1-i; j++) {
                 if(arr[j] > arr[j+1]) {
-                  swap = arr[j];
-                  arr[j] = arr[j+1];
-                  arr[j+1] = swap;
+                    swap = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = swap;
                 }
             }
             for(int k : arr) {
@@ -91,9 +85,9 @@ public class Array_Algorithms extends Main{
 
         final int key = 13;
         int[] array = {-2, 9, 11, 12, 13, 14, 15, 22, 142};
-        System.out.println("Sequential search:  ");
+        System.out.println("Sequential search: ");
         sequential_search(array, 15);
-        System.out.println("Binary search  ");
+        System.out.println("Binary search ");
         binary_search(array, 15);
 
     }
@@ -116,11 +110,11 @@ public class Array_Algorithms extends Main{
     static void hw3() {
 
         int[] data = {-4, 11, 7, -21, 6, 1};
-        System.out.println("------------------");
+        System.out.println("<------------------>");
         selection_sort(data);
-        System.out.println("------------------");
+        System.out.println("<------------------>");
         bubble_sort(data);
-        System.out.println("------------------");
+        System.out.println("<------------------>");
 
     }
 
@@ -158,16 +152,15 @@ public class Array_Algorithms extends Main{
 
     static void hw4() {
 
-        String addr =
-                "http://www-personal.umich.edu/~jlawler/wordlist";
+        String addr = "http://www-personal.umich.edu/~jlawler/wordlist";
         String[] words = ReadViaURL.readWords(addr);
         System.out.println(sequentialSearchStr(words, "able"));
-
         System.out.println(binarySearchStr(words, "able"));
 
     }
 
     static void hw5(int[] arr) {
+
 
         int n = arr.length;
         int i = 1;
@@ -185,6 +178,6 @@ public class Array_Algorithms extends Main{
         }
 
     }
-    
+
 
 }
