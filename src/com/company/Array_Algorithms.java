@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Array_Algorithms extends Main {
@@ -71,19 +70,22 @@ public class Array_Algorithms extends Main {
 
 
         int swap;
-        for(int i = 0; i < arr.length; i++) {
-            for(int j = i; j < arr.length-1-i; j++) {
-                if(arr[j] > arr[j+1]) {
+        boolean changed = true;
+        int correct = 0;
+        while (changed) {
+            changed = false;
+            for (int j = 0; j < arr.length - 1 - correct; j++) {
+                if (arr[j] > arr[j + 1]) {
                     swap = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = swap;
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = swap;
+                    changed = true;
                 }
             }
-            for(int k : arr) {
-                System.out.println(k);
-            }
-            System.out.println("");
+            correct++;
         }
+            System.out.println("");
+
 
     }
 
@@ -212,11 +214,16 @@ public class Array_Algorithms extends Main {
 
     }
 
-    static void hw7(int n) {
 
+    static String[] getAddress() {
 
         String addr = "http://www-personal.umich.edu/~jlawler/wordlist";
         String[] words = ReadViaURL.readWords(addr);
+        return words;
+
+    }
+
+    static void shuffle(String[] words, int n) {
 
         Random rand = new Random();
 
@@ -225,17 +232,20 @@ public class Array_Algorithms extends Main {
             swap(a, i, words);
         }
 
-        selection_sort_str(words, n);
-
     }
-        // data for drawing a graph
-        static void for_graph(int n) {
-            for (int i = n; i < n * 100; i += 100) {
-                long start = System.nanoTime();
-                Array_Algorithms.hw7(n);
-                long timeWent = System.nanoTime() - start;
-                System.out.println(n + " " + timeWent);
-            }
+
+    static void hw7(int n) {
+
+        String[] words = getAddress();
+        shuffle(words, n);
+
+        for(int i = 0; i <= n; i+=5000) {
+            long start = System.currentTimeMillis();
+            selection_sort_str(words, i);
+            long timeWent = System.currentTimeMillis() - start;
+            System.out.println(i + " " + timeWent);
         }
+    }
 }
+
 
