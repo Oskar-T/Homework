@@ -1,0 +1,41 @@
+package com.company.homework;
+
+public class Point {
+
+    private int x;
+    private int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public boolean isOnTheX(int x) {
+        return x == 0;
+    }
+
+    public String toString() {
+        return ("Point has coordinates x:" + x + " y:" + y);
+    }
+
+    public boolean ifHasSameCoordinates(Point a, Point b) {
+        boolean xIsEqual = a.x == b.x;
+        boolean yIsEqual = a.y == b.y;
+        return xIsEqual && yIsEqual;
+    }
+
+    public static double getDistance(Point a, Point b) {
+        return Math.sqrt(Math.pow((a.x-b.x), 2) + Math.pow((a.y - b.y), 2));
+    }
+
+    public static boolean isInUnitCircle(Point a) {
+        return Math.pow(a.x, 2) + Math.pow(a.y, 2) == 1;
+    }
+
+    public static double middlePoint(Point a, Point b) {
+        return getDistance(a, b) / 2;
+    }
+
+
+
+}
