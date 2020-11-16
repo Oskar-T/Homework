@@ -128,11 +128,16 @@ public class Array_Algorithms extends Main {
 
     static int sequentialSearchStr(String []arr, String key) {
 
-        for(int i = 0; i < arr.length; i++) {
-            if(arr[i].equals(key)) {
-                return i;
+        int counter = 0;
+        boolean found = false;
+        while (!found) {
+            if(arr[counter].equals(key)) {
+                found = true;
+                return counter;
             }
+            counter++;
         }
+
         return -1;
     }
 
@@ -187,7 +192,7 @@ public class Array_Algorithms extends Main {
     }
 
     static void hw6() {
-        System.out.println("Homework 6 is one the handout");
+        System.out.println("Homework 6 is one the handout and I forgot it at home");
 
     }
 

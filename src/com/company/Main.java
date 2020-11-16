@@ -8,7 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Array_Algorithms.hw7(50000);
+     Array_Algorithms.hw4();
+
 
     }
 }
