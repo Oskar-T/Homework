@@ -32,8 +32,8 @@ public class Point {
         return Math.pow(a.x, 2) + Math.pow(a.y, 2) == 1;
     }
 
-    public static double middlePoint(Point a, Point b) {
-        return getDistance(a, b) / 2;
+    public static Point middlePoint(Point a, Point b) {
+       return new Point((a.x + b.x)/2, (a.y + b.y)/2);
     }
 
 

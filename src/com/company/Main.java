@@ -10,7 +10,7 @@ public class Main {
 
         Point a = new Point(3, 2);
         Point b = new Point(7, 8);
-        System.out.println(Point.getDistance(a, b));
+        System.out.println(Point.middlePoint(a, b));
 
 
     }
