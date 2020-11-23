@@ -1,9 +1,8 @@
-package com.company.homework;
+package com.company.oop;
 
-import com.company.Main;
 import ibcsutils.Book;
 
-public class BooksHomework extends Main {
+public class BooksHomework {
 
     public static void hw() {
         String[] author = new String[1];
@@ -13,8 +12,9 @@ public class BooksHomework extends Main {
         author2[0] = "Author2";
 
         Book[] books = new Book[2];
-        books[0] = new Book("Name", author, 2000);
-        books[1] = new Book("Name", author2, 2001);
+        books[0] = new Book("BookName1", author, 2000);
+        books[1] = new Book("BookName2", author2, 2001);
+
         for (Book book : books) {
             System.out.println(book);
         }

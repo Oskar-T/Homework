@@ -1,17 +1,17 @@
 package com.company;
 
-import com.company.homework.Point;
-import ibcsutils.Book;
-import java.util.Random;
+import com.company.product.Order;
+import com.company.product.Warehouse;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Point a = new Point(3, 2);
-        Point b = new Point(7, 8);
-        System.out.println(Point.middlePoint(a, b));
+        Warehouse warehouse = new Warehouse();
+        Order order = new Order(warehouse.laptops[0],
+                                warehouse.routers[1]);
 
+        System.out.println(order);
 
     }
 }

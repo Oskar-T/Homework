@@ -1,4 +1,4 @@
-package com.company.homework;
+package com.company.oop;
 
 public class Newspaper {
 
@@ -20,6 +20,7 @@ public class Newspaper {
     }
 
     public void setDate(int year, int month, int dayOfMonth) {
+
         this.year = year;
         this.month = month;
         this.dayOfMonth = dayOfMonth;
@@ -30,6 +31,6 @@ public class Newspaper {
     }
 
     public String toString() {
-        return (name + " " + year + " " + month + " " + dayOfMonth + " " + isFinnish);
+        return (name + " " + dayOfMonth + "/" + month + "/" + year + " is Finnish?: " + isFinnish);
     }
 }

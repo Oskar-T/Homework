@@ -1,4 +1,4 @@
-package com.company.homework;
+package com.company.oop;
 
 public class User {
 
@@ -14,20 +14,20 @@ public class User {
         this.address = address;
     }
 
-    void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    String getLastName() {
-        return lastName;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
     String getFirstName() {
         return firstName;
+    }
+
+    void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    String getLastName() {
+        return lastName;
     }
 
     public int getUserId() {

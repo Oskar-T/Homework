@@ -1,4 +1,4 @@
-package com.company.homework;
+package com.company.oop;
 
 public class Point {
 

@@ -1,6 +1,4 @@
-package com.company.homework;
-
-import com.company.Collections;
+package com.company.oop;
 
 public class Course {
 
