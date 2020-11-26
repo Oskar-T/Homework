@@ -2,20 +2,21 @@ package com.company.ClassRelationship;
 
 public class Task {
 
-    private String name;
-    private int numberOfEmployees;
-    private Worker[] workers;
+    Worker[] workers;
+    String name;
 
-    public Task(String name, Worker[] workers) {
+    public Task(String name, Worker w1, Worker w2) {
+
         this.name = name;
-        this.workers = workers;
+        workers = new Worker[2];
+        workers[0] = w1;
+        workers[1] = w2;
+
     }
 
-    public void addWorker(int id, Worker worker) {
-        this.workers[id] = worker;
-    }
+    public String toString() {
 
-    public String getName() {
-        return name;
+        return name + " " + workers[0].name +" " + workers[1].name;
+
     }
 }

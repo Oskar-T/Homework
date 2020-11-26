@@ -2,19 +2,17 @@ package com.company.ClassRelationship;
 
 public class Worker {
 
-    private String name;
-    private String workType;
+   public String name;
+   public String type;
 
-    public Worker(String name, String workType) {
-        this.name = name;
-        this.workType = workType;
-    }
+   public Worker(String name, String type) {
 
-    public String getName() {
-        return name;
-    }
+       this.name = name;
+       this.type = type;
 
-    public String getWorkType() {
-        return workType;
+   }
+
+    public String toString() {
+       return name + " " + type;
     }
 }

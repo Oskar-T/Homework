@@ -1,0 +1,15 @@
+CoSc EE:
+
+TODO
+
+Math IA:
+
+Password cracking
+
+1. Generate different passwords (including letters, numbers, letters and numbers).
+2. Write a password cracker
+3. Count time for each of three types and consider different sizes of the password
+
+TOFIND:
+Correlation between the number of symbols and time taken
+

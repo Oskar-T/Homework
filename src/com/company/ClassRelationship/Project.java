@@ -1,26 +1,25 @@
 package com.company.ClassRelationship;
 
+import com.company.product.Product;
+
 public class Project {
 
+    Task[] tasks;
+    int id;
+    int nextId = 1;
 
-    private int id;
-    private Task[] tasks;
-    private static int nextInt = 1;
 
+    public Project(Task t1, Task t2) {
 
-    public Project(int numberOfTasks, Task[] tasks) {
-        this.id = nextInt;
-        nextInt++;
-        this.tasks = tasks;
+       this.id = nextId;
+       nextId++;
+       tasks = new Task[2];
+       tasks[0] = t1;
+       tasks[1] = t2;
+
     }
 
-
-    public int getId() {
-        return id;
+    public String toString() {
+       return id + " " + tasks[0] + " " + tasks[1];
     }
-
-    public void addTask(Task task, int id) {
-        tasks[id] = task;
-    }
-
 }
