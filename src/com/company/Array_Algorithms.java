@@ -37,33 +37,26 @@ public class Array_Algorithms extends Main {
 
         }
         return middle;
-
     }
 
     static void selection_sort(int []arr) {
-
         int swap;
-
-
         for(int i = 0; i < arr.length-1; i++) {
             int index = i;
             for(int j = i+1; j < arr.length; j++) {
-                if(arr[index] > arr[j]) {
+                if(arr[index] < arr[j]) {
                     index = j;
                 }
             }
             swap = arr[index];
             arr[index] = arr[i];
             arr[i] = swap;
-
             for(int k: arr) {
                 System.out.println(k);
             }
-
             System.out.println("");
         }
         System.out.println(Runtime.version());
-
     }
 
     static void bubble_sort(int []arr) {

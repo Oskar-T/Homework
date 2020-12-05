@@ -6,18 +6,30 @@ import com.company.ClassRelationship.Worker;
 import com.company.product.Order;
 import com.company.product.Warehouse;
 
+import java.util.LinkedList;
+import java.util.ListIterator;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        final int N = 4;
-        int[] bits = new int [N];
-        for (bits [0] = 0; bits [0] <= 1; bits [0]++) {
-            for (bits[1] = 0; bits[1] <= 1; bits[1]++) {
-                for (bits[2] = 0; bits[2] <= 1; bits[2]++) {
-                    System.out.println(java.util.Arrays.toString(bits));
-                }
-            }
-        }
+        LinkedList<Integer> l1 = new LinkedList<Integer>();
+        LinkedList<Integer> l2 = new LinkedList<Integer>();
+
+        LinkedList<LinkedList<Integer>> bigList = new LinkedList<LinkedList<Integer>>();
+
+        l1.add(5);
+        l1.add(6);
+
+        l2.add(7);
+        l2.add(8);
+
+        bigList.add(l1);
+        bigList.add(l2);
+
+        System.out.println(Lists.flatten(bigList));
+
+
+
     }
 }
