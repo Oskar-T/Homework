@@ -1,13 +1,8 @@
 package com.company;
 
-import com.company.ClassRelationship.Project;
-import com.company.ClassRelationship.Task;
-import com.company.ClassRelationship.Worker;
-import com.company.product.Order;
-import com.company.product.Warehouse;
-
 import java.util.LinkedList;
 import java.util.ListIterator;
+
 
 public class Main {
 
@@ -30,6 +25,23 @@ public class Main {
         System.out.println(Lists.flatten(bigList));
 
 
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+
+        linkedList.add(5);
+        linkedList.add(11);
+        linkedList.add(7);
+
+        ListIterator<Integer> lt = linkedList.listIterator();
+
+        lt.add(20);
+        lt.next();
+        lt.remove();
+        lt.next();
+        lt.set(15);
+        lt.next();
+        lt.remove();
+        lt.remove();
+        System.out.println(linkedList);
 
     }
 }

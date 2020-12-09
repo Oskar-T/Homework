@@ -112,7 +112,7 @@ public class Lists {
 
     public static void Homework5() {
 
-        System.out.println("On github");
+        System.out.println("On github: https://github.com/Oskar-T/hw5_lists/tree/master/src/com/company");
 
     }
 
@@ -122,7 +122,7 @@ public class Lists {
 
         for(int i = 0; i < list.size(); i++) {
             ListIterator inner_lt = list.get(i).listIterator();
-            while (inner_lt.hasNext()) {
+        while (inner_lt.hasNext()) {
                 flattened.add(list.get(i).removeFirst());
             }
         }
