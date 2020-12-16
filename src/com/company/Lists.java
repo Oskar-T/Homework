@@ -23,6 +23,41 @@ public class Lists {
         }
     }
 
+    public static void Example5() {
+
+        LinkedList<String> list = new LinkedList<String>();
+        list.add("");
+        list.add("abc");
+        list.add("qwefds");
+
+        ListIterator<String> it = list.listIterator();
+
+        while (it.hasNext()) {
+            if(it. next().length() <= 5) {
+                it.set("done");
+            }
+        }
+
+        System.out.println(list);
+    }
+
+    public static void Example6() {
+
+        ArrayList<Double> arrayList = new ArrayList<Double>(5);
+        Scanner scanner = new Scanner(System.in);
+
+        while (scanner.hasNextDouble()) {
+                arrayList.add(scanner.nextDouble());
+        }
+
+
+
+        System.out.println(arrayList);
+
+
+    }
+
+
     public static LinkedList merge(LinkedList<String> l1,
                                    LinkedList<String> l2) {
 
@@ -95,17 +130,26 @@ public class Lists {
 
         Scanner scan = new Scanner(System.in);
         LinkedList<Integer> list = new LinkedList<Integer>();
-        while (scan.hasNextInt()) {
 
+        while (scan.hasNextInt()) {
+            boolean found = false;
+            ListIterator<Integer> it = list.listIterator();
             int num = scan.nextInt();
-            if(!list.contains(num)) {
+            while (!found && it.hasNext()) {
+                if(it.next() == num) {
+                    found = true;
+                }
+            }
+
+            if(!found) {
                 list.addFirst(num);
-            } else if(list.contains(num)) {
-                list.removeFirstOccurrence(num);
+            } else {
+                list.remove(it.previousIndex());
                 list.addFirst(num);
             }
 
         }
+
         System.out.println(list);
 
     }
@@ -122,7 +166,7 @@ public class Lists {
 
         for(int i = 0; i < list.size(); i++) {
             ListIterator inner_lt = list.get(i).listIterator();
-        while (inner_lt.hasNext()) {
+            while (inner_lt.hasNext()) {
                 flattened.add(list.get(i).removeFirst());
             }
         }
