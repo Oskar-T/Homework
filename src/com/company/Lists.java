@@ -45,16 +45,10 @@ public class Lists {
 
         ArrayList<Double> arrayList = new ArrayList<Double>(5);
         Scanner scanner = new Scanner(System.in);
-
         while (scanner.hasNextDouble()) {
                 arrayList.add(scanner.nextDouble());
         }
-
-
-
         System.out.println(arrayList);
-
-
     }
 
 
