@@ -33,7 +33,7 @@ public class recursion {
 
     public static int F(int n) {
 
-        if (n == 0) {
+        if (n == 0 || n == 1) {
             return 1;
         } else {
             return n * F(n - 1);
@@ -65,7 +65,7 @@ public class recursion {
 
         if (arr[index] == key) {
             return index;
-        } else if (index >= arr.length - 1) {
+        } else if (index >= arr.length) {
             return -1;
         } else {
             return hw4(arr, key, index + 1);
