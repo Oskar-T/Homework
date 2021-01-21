@@ -68,12 +68,10 @@ public class TwoDimensionalArrays {
         arr[5][3] = 22;
 
         for(int r = 0; r < 6; r++) {
-
             for(int c = 0; c < 5; c++) {
                 System.out.print(arr[r][c] +" ");
             }
             System.out.println();
-
         }
 
     }
@@ -84,7 +82,6 @@ public class TwoDimensionalArrays {
                 {"d", "e", "f"}, {"g", "d", "i"}};
 
         String key = "d";
-        boolean found = false;
         for (int r = 0; r < arr.length; r++) {
             for (int c = 0; c < arr.length; c++) {
                 if (arr[r][c].equals(key)) {
