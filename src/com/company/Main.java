@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TwoDimensionalArrays.hw3();
+        TwoDimensionalArrays.hw2();
 
     }
 }
