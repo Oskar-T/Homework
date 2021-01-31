@@ -44,6 +44,11 @@ public class TwoDimensionalArrays {
 
     }
 
+    public static void example() {
+
+
+    }
+
     public static void hw1() {
 
         // 1. 2
@@ -67,9 +72,9 @@ public class TwoDimensionalArrays {
         arr[3][2] = 7;
         arr[5][3] = 22;
 
-        for(int r = 0; r < 6; r++) {
-            for(int c = 0; c < 5; c++) {
-                System.out.print(arr[r][c] +" ");
+        for (int r = 0; r < 6; r++) {
+            for (int c = 0; c < 5; c++) {
+                System.out.print(arr[r][c] + " ");
             }
             System.out.println();
         }
@@ -118,14 +123,82 @@ public class TwoDimensionalArrays {
 
     public static void hw5() {
 
-       // palindrome
+        // palindrome
 
     }
 
-    static void hw6() {
-        //idk
+    public static void hw6() {
+
+        int n = 5;
+
+        int[][] A = new int[n][n];
+        int z = 1, left = 0, right = n - 1, top = 0, bottom = n - 1;
+
+        while (z <= n * n) {
+
+            for (int c = left; c <= right; c++) {
+                A[top][c] = z++;
+            }
+
+            for (int r = top + 1; r <= bottom; r++) {
+                A[r][right] = z++;
+            }
+
+            for (int c = right - 1; c >= left; c--) {
+                A[bottom][c] = z++;
+            }
+
+            for (int r = bottom - 1; r >= top + 1; r--) {
+                A[r][left] = z++;
+            }
+
+            top++;
+            bottom--;
+            left++;
+            right--;
+
+        }
+
+
+        for (int c = 0; c < n; c++) {
+            for (int r = 0; r < n; r++) {
+                System.out.print(A[c][r] + "\t");
+            }
+            System.out.println();
+        }
+
     }
 
+    public static void hw8() {
+        int n = 5;
+        boolean[][] con = new boolean[n][n];
+
+
+        for (int i = 0; i < n-1; i++) {
+            for (int s = 0; s < n-1; s++) {
+                if (s != i && con[s][i]) {
+                    for (int t = 0; t < n-1; t++) {
+                        if (con[i][t]) {
+                            con[s][t] = true;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        for(int i = 0; i < n; i++) {
+
+            for(int c = 0; c < n; c++) {
+                System.out.print(con[i][c] + " ");
+            }
+            System.out.println();
+
+        }
+
+
+    }
 
 
 }

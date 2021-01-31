@@ -56,7 +56,7 @@ public class Array_Algorithms extends Main {
             }
             System.out.println("");
         }
-        System.out.println(Runtime.version());
+        System.out.println();
     }
 
     static void bubble_sort(int []arr) {
