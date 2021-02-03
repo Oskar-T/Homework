@@ -162,7 +162,7 @@ public class TwoDimensionalArrays {
 
         for (int c = 0; c < n; c++) {
             for (int r = 0; r < n; r++) {
-                System.out.print(A[c][r] + "\t");
+                System.out.print(A[c][r] + "\n");
             }
             System.out.println();
         }
@@ -170,32 +170,7 @@ public class TwoDimensionalArrays {
     }
 
     public static void hw8() {
-        int n = 5;
-        boolean[][] con = new boolean[n][n];
 
-
-        for (int i = 0; i < n-1; i++) {
-            for (int s = 0; s < n-1; s++) {
-                if (s != i && con[s][i]) {
-                    for (int t = 0; t < n-1; t++) {
-                        if (con[i][t]) {
-                            con[s][t] = true;
-                        }
-                    }
-                }
-
-            }
-
-        }
-
-        for(int i = 0; i < n; i++) {
-
-            for(int c = 0; c < n; c++) {
-                System.out.print(con[i][c] + " ");
-            }
-            System.out.println();
-
-        }
 
 
     }
