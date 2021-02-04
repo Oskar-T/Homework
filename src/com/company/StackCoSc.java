@@ -33,6 +33,8 @@ public class StackCoSc {
             stack.push(input);
         }
 
+        scanner.close();
+
         while (!stack.isEmpty()) {
             System.out.println(stack.pop());
         }
@@ -42,17 +44,18 @@ public class StackCoSc {
     }
 
     public static void example3() {
-        int N = 5;
-        int counter = 0;
-        Stack stack = new Stack();
-        for(int i = 0; i < N; i++) {
-            counter += N - i;
-            stack.push(counter);
-        }
+        int N = 100;
 
-        while (!stack.isEmpty()) {
-            System.out.println(stack.pop());
+        Stack<Integer> stack = new Stack();
+        while (N > 1) {
+            stack.push(N);
+            N--;
         }
+        int sum = 1;
+        while (!stack.isEmpty()) {
+            sum += stack.pop();
+        }
+        System.out.println(sum);
 
 
     }
@@ -82,34 +85,36 @@ public class StackCoSc {
     }
 
     public static boolean hw3() {
-        //TODO
+
         Scanner scanner = new Scanner(System.in);
         Stack<String> stack = new Stack<String>();
         while (!scanner.next().equals("-1")) {
+
             String str = scanner.next();
-            if(str.equals("(") || str.equals("{") || str.equals("[")) {
+            if(str.equals("[") || str.equals("(") || str.equals("{")) {
                 stack.push(str);
             }
-
-            if(str.equals(")")) {
-                str = stack.pop();
-                if(!str.equals("(")) {
+            String check;
+            if (")".equals(str)) {
+                check = stack.pop();
+                if (check.equals("{") || check.equals("[")) {
                     return false;
                 }
-            } else if(str.equals("]")) {
-                str = stack.pop();
-                if(!str.equals("[")) {
+            } else if ("}".equals(str)) {
+                check = stack.pop();
+                if (check.equals("(") || check.equals("[")) {
                     return false;
                 }
-            } else if(str.equals("}")) {
-                str = stack.pop();
-                if(!str.equals("{")) {
+            } else if ("]".equals(str)) {
+                check = stack.pop();
+                if (check.equals("(") || check.equals("{")) {
                     return false;
                 }
             }
-
-
         }
+
+
+
         return stack.isEmpty();
 
     }
