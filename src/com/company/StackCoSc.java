@@ -94,6 +94,7 @@ public class StackCoSc {
             if(str.equals("[") || str.equals("(") || str.equals("{")) {
                 stack.push(str);
             }
+            // is replaceable with switch statement instead of if
             String check;
             if (")".equals(str)) {
                 check = stack.pop();
@@ -112,15 +113,6 @@ public class StackCoSc {
                 }
             }
         }
-
-
-
         return stack.isEmpty();
-
     }
-
-
-
-
-
 }

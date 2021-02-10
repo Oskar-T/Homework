@@ -34,18 +34,17 @@ public class IntStack {
     }
 
     int pop() {
-
-        if(!isEmpty()) {
-            itemsCount--;
-            int item = IntStack[0];
-            for(int i = 1; i <=  itemsCount; i++) {
-                IntStack[i-1] = IntStack[i];
+            if(!isEmpty()) {
+                itemsCount--;
+                int item = IntStack[0];
+                for (int i = 1; i <= itemsCount; i++) {
+                    IntStack[i - 1] = IntStack[i];
+                }
+                IntStack[itemsCount] = 0;
+                return item;
+            } else {
+                return -1;
             }
-            IntStack[itemsCount] = 0;
-            return item;
-        }
-
-        return 0;
     }
 
     boolean isEmpty() {
